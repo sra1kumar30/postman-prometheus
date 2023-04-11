@@ -7,7 +7,7 @@ on:
 
 env:
   IMAGE_REG: ghcr.io
-  IMAGE_REPO: benc-uk/postman-prometheus
+  IMAGE_REPO: sra1kumar30/postman-prometheus
 
 permissions:
   packages: write
