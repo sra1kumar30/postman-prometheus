@@ -1,5 +1,6 @@
 const newman = require('newman')
 const express = require('express')
+const URL = require('node:url')
 const fs = require('fs')
 const http = require('./http.js')
 
@@ -187,7 +188,9 @@ async function fetchConfig() {
   if (collectionUrl) {
     logMessage(` - Collection URL will be fetched and used ${collectionUrl}`)
     try {
-      const httpClient = new http(collectionUrl, false)
+      const bearerToken = new URL(collectionUrl).searchParams.get('access_token');
+      const auth = bearerToken ? {creds:bearerToken,type:'bearer'} : null;
+      const httpClient = new http(collectionUrl, false, auth);
       let resp = await httpClient.get('')
       fs.writeFileSync(`./downloaded-collection.tmp.json`, resp.data)
       // Note. Overwrite the COLLECTION_FILE setting to point to downloaded file
