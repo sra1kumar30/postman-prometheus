@@ -1,6 +1,6 @@
 const newman = require('newman')
 const express = require('express')
-const URL = require('node:url')
+const {URL} = require('node:url');
 const fs = require('fs')
 const http = require('./http.js')
 
