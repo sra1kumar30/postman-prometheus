@@ -1,6 +1,6 @@
 IMAGE_REG ?= ghcr.io
 IMAGE_REPO ?= sra1kumar30/postman-prometheus
-IMAGE_TAG ?= 1.4.0
+IMAGE_TAG ?= latest
 
 SRC_DIR := src
 ROOT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
