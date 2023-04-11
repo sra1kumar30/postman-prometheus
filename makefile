@@ -1,5 +1,5 @@
 IMAGE_REG ?= ghcr.io
-IMAGE_REPO ?= benc-uk/postman-prometheus
+IMAGE_REPO ?= sra1kumr30/postman-prometheus
 IMAGE_TAG ?= latest
 
 SRC_DIR := src
